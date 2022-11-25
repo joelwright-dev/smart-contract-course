@@ -106,7 +106,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity/contracts/simplestorage.sol": "SimpleStorage"
+			"solidity/contracts/simple storage/simplestorage.sol": "SimpleStorage"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -120,7 +120,7 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity/contracts/simplestorage.sol": {
+		"solidity/contracts/simple storage/simplestorage.sol": {
 			"keccak256": "0xfaf76f34d7f4c56649ab482e2e7e05eb7c536547e83f9ceade7277fc97d1d13b",
 			"license": "MIT",
 			"urls": [
