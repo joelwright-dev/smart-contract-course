@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.7;
 
 import "./PriceConverter.sol";
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 error FundMe__NotOwner();
 error FundMe__CallFail();
-error FundMe__LowInput();
 
 /**
  * @title A contract for crowd funding
@@ -18,9 +18,9 @@ contract FundMe {
 	using PriceConverter for uint256;
 
 	uint256 public constant MINIMUM_USD = 50 * 1e18;
-	address[] public funders;
-	mapping(address => uint256) public addressToAmountFunded;
-	address public immutable i_owner;
+	address[] private funders;
+	mapping(address => uint256) private addressToAmountFunded;
+	address private immutable i_owner;
 	AggregatorV3Interface private priceFeed;
 
 	modifier onlyOwner() {
@@ -47,9 +47,10 @@ contract FundMe {
 	 * @notice This function funds this contract
 	 */
 	function fund() public payable {
-		if (msg.value.getConversionRate(priceFeed) < MINIMUM_USD) {
-			revert FundMe__LowInput();
-		}
+		require(
+			msg.value.getConversionRate(priceFeed) >= MINIMUM_USD,
+			"You need to spend more ETH!"
+		);
 		funders.push(msg.sender);
 		addressToAmountFunded[msg.sender] += msg.value;
 	}

@@ -2,11 +2,11 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/osiris/Development/smart-contract-course/Hard Hat/Hard Hat Fund Me/contracts/FundMe.sol": {
-      "lastModificationDate": 1669584514724,
-      "contentHash": "39307c0f76b4c476c7a983858686c89e",
+      "lastModificationDate": 1669630400245,
+      "contentHash": "aa2221d523a39db59ce6b5151c4716b0",
       "sourceName": "contracts/FundMe.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -36,21 +36,22 @@
         }
       },
       "imports": [
-        "./PriceConverter.sol"
+        "./PriceConverter.sol",
+        "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol"
       ],
       "versionPragmas": [
-        "^0.8.0"
+        "^0.8.7"
       ],
       "artifacts": [
         "FundMe"
       ]
     },
     "/home/osiris/Development/smart-contract-course/Hard Hat/Hard Hat Fund Me/contracts/PriceConverter.sol": {
-      "lastModificationDate": 1669538081514,
-      "contentHash": "3f0ba8056ec2a7cc980a9ea3b66a0b84",
+      "lastModificationDate": 1669630405925,
+      "contentHash": "3ddb3249f5ee8ae388059a50b78a66c0",
       "sourceName": "contracts/PriceConverter.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -94,7 +95,7 @@
       "contentHash": "611f626b2447ccff9ba5332460fd217f",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol",
       "solcConfig": {
-        "version": "0.8.17",
+        "version": "0.8.7",
         "settings": {
           "optimizer": {
             "enabled": false,

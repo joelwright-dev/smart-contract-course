@@ -9,8 +9,8 @@ library PriceConverter {
 		view
 		returns (uint256)
 	{
-		(, int256 price, , , ) = priceFeed.latestRoundData();
-		return uint256(price * 1e10);
+		(, int256 answer, , , ) = priceFeed.latestRoundData();
+		return uint256(answer * 1e10);
 	}
 
 	function getConversionRate(
