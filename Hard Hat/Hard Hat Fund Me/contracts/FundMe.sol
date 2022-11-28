@@ -6,6 +6,7 @@ import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 
 error FundMe__NotOwner();
 error FundMe__CallFail();
+error FundMe__LowInput();
 
 /**
  * @title A contract for crowd funding
@@ -47,10 +48,9 @@ contract FundMe {
 	 * @notice This function funds this contract
 	 */
 	function fund() public payable {
-		require(
-			msg.value.getConversionRate(s_priceFeed) >= MINIMUM_USD,
-			"You need to spend more ETH!"
-		);
+		if (msg.value.getConversionRate(s_priceFeed) < MINIMUM_USD) {
+			revert FundMe__LowInput();
+		}
 		s_funders.push(msg.sender);
 		s_addressToAmountFunded[msg.sender] += msg.value;
 	}
@@ -103,5 +103,9 @@ contract FundMe {
 
 	function getPriceFeed() public view returns (AggregatorV3Interface) {
 		return s_priceFeed;
+	}
+
+	function getOwner() public view returns (address) {
+		return i_owner;
 	}
 }

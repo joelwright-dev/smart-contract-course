@@ -26,9 +26,7 @@ describe("FundMe", () => {
 
 	describe("fund", () => {
 		it("Fails if you don't send enough ETH", async () => {
-			await expect(fundMe.fund()).to.be.revertedWith(
-				"You need to spend more ETH!"
-			)
+			await expect(fundMe.fund()).to.be.revertedWith("FundMe__LowInput")
 		})
 
 		it("Updates the amount funded data structure", async () => {
