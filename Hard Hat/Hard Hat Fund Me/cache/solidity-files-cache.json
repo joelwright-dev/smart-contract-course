@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/osiris/Development/smart-contract-course/Hard Hat/Hard Hat Fund Me/contracts/FundMe.sol": {
-      "lastModificationDate": 1669630400245,
-      "contentHash": "aa2221d523a39db59ce6b5151c4716b0",
+      "lastModificationDate": 1669668948365,
+      "contentHash": "564371a44a95c6bb877d7d56b5aecf9c",
       "sourceName": "contracts/FundMe.sol",
       "solcConfig": {
         "version": "0.8.7",
@@ -264,7 +264,7 @@
       ]
     },
     "/home/osiris/Development/smart-contract-course/Hard Hat/Hard Hat Fund Me/node_modules/@chainlink/contracts/src/v0.6/interfaces/AggregatorInterface.sol": {
-      "lastModificationDate": 1669534103908,
+      "lastModificationDate": 1669583598504,
       "contentHash": "0c9be74e354bca05abc54edfdc49607e",
       "sourceName": "@chainlink/contracts/src/v0.6/interfaces/AggregatorInterface.sol",
       "solcConfig": {
