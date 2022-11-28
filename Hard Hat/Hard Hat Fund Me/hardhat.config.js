@@ -6,7 +6,7 @@ require("solidity-coverage")
 require("hardhat-deploy")
 require("hardhat-gas-reporter")
 require("@nomiclabs/hardhat-etherscan")
-require("@nomicfoundation/hardhat-toolbox")
+require("@nomiclabs/hardhat-waffle")
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -16,6 +16,7 @@ module.exports = {
 			url: process.env.GOERLI_RPC_URL,
 			accounts: [process.env.PRIVATE_KEY],
 			chainId: 5,
+			blockConfigrmations: 6,
 		},
 		localhost: {
 			url: "http://127.0.0.1:8545",
