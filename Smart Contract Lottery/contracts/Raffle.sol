@@ -140,10 +140,7 @@ contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
 		(bool success, ) = recentWinner.call{
 			value: (address(this).balance * 9) / 10
 		}("");
-		(bool ownerSuccess, ) = i_owner.call{
-			value: (address(this).balance * 1) / 10
-		}("");
-		if (!success || !ownerSuccess) {
+		if (!success) {
 			revert Raffle__TransferFailed();
 		}
 		emit WinnerPicked(recentWinner);
