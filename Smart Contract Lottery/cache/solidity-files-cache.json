@@ -170,8 +170,8 @@
       ]
     },
     "/home/osiris/Development/smart-contract-course/Smart Contract Lottery/contracts/Raffle.sol": {
-      "lastModificationDate": 1670025467144,
-      "contentHash": "174bce275d76326a24f3a8d6d4494474",
+      "lastModificationDate": 1670043431478,
+      "contentHash": "65bc9a1c5add2353562b9d0f96833948",
       "sourceName": "contracts/Raffle.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -304,7 +304,7 @@
       ]
     },
     "/home/osiris/Development/smart-contract-course/Smart Contract Lottery/contracts/test/VRFCoordinatorV2Mock.sol": {
-      "lastModificationDate": 1670020615771,
+      "lastModificationDate": 1670022047758,
       "contentHash": "5489190bcab0ea6d5a927fee78894071",
       "sourceName": "contracts/test/VRFCoordinatorV2Mock.sol",
       "solcConfig": {
