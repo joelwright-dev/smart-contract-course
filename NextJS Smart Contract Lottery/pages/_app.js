@@ -6,6 +6,7 @@ import Connection from "../components/Connection"
 import ManualHeader from "../components/ManualHeader"
 import { useEffect } from "react"
 import { NotificationProvider } from "web3uikit"
+import "../styles/styles.css"
 
 function MyApp({ Component, pageProps }) {
 	return (
