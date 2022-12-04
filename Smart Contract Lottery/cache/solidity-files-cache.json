@@ -170,8 +170,8 @@
       ]
     },
     "/home/osiris/Development/smart-contract-course/Smart Contract Lottery/contracts/Raffle.sol": {
-      "lastModificationDate": 1670043431478,
-      "contentHash": "65bc9a1c5add2353562b9d0f96833948",
+      "lastModificationDate": 1670096343268,
+      "contentHash": "26de034de6bc7bd0a1722af30265bb9a",
       "sourceName": "contracts/Raffle.sol",
       "solcConfig": {
         "version": "0.8.17",
