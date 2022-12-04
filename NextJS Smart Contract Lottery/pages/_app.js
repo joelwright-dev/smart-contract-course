@@ -4,23 +4,27 @@ import { AppShell, Header, Group } from "@mantine/core"
 import Logo from "../components/Logo"
 import Connection from "../components/Connection"
 import ManualHeader from "../components/ManualHeader"
+import { useEffect } from "react"
+import { NotificationProvider } from "web3uikit"
 
 function MyApp({ Component, pageProps }) {
 	return (
 		<MoralisProvider initializeOnMount={false}>
-			<AppShell
-				padding="md"
-				header={
-					<Header height={60} p="xs">
-						<Group position="apart">
-							<Logo />
-							<ManualHeader />
-						</Group>
-					</Header>
-				}
-			>
-				<Component {...pageProps} />
-			</AppShell>
+			<NotificationProvider>
+				<AppShell
+					padding="md"
+					header={
+						<Header height={60} p="xs">
+							<Group position="apart">
+								<Logo />
+								<Connection />
+							</Group>
+						</Header>
+					}
+				>
+					<Component {...pageProps} />
+				</AppShell>
+			</NotificationProvider>
 		</MoralisProvider>
 	)
 }

@@ -3,10 +3,23 @@ import { Button, Card, Avatar, Text, Group, ActionIcon } from "@mantine/core"
 import { useEffect, useState } from "react"
 import { useEvmNativeBalance } from "@moralisweb3/next"
 import { Trash } from "tabler-icons-react"
-const Moralis = require("moralis").default
+import Moralis from "moralis"
 
-const ManualHeader = () => {
+const ManualHeader = ({ alchemy }) => {
 	const [nativeBalance, setNativeBalance] = useState("")
+	const [moralis, setMoralis] = useState(false)
+
+	async function getBalance() {
+		try {
+			await Moralis.start({ apiKey: process.env.MORALIS_API_KEY })
+		} catch (e) {
+			console.log(e)
+		}
+		const response = await Moralis.EvmApi.balance.getNativeBalance({
+			address: account,
+		})
+		return response
+	}
 
 	const {
 		enableWeb3,
@@ -18,17 +31,10 @@ const ManualHeader = () => {
 		isInitialized,
 	} = useMoralis()
 
-	async function getBalance() {
-		setNativeBalance(
-			await Moralis.EvmApi.balance.getNativeBalance({
-				address: account,
-				chain: "0x5",
-			}).data
-		)
-	}
-
-	if (account !== null) {
-		getBalance()
+	if (account !== null && !moralis) {
+		setNativeBalance(getBalance())
+		console.log(nativeBalance)
+		setMoralis(true)
 	}
 
 	useEffect(() => {
