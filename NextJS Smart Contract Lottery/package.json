@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -35,6 +36,7 @@
     "web3uikit": "^1.0.4"
   },
   "devDependencies": {
+    "fleek": "^2.1.1",
     "prettier": "^2.8.0"
   }
 }
