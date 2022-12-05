@@ -26,6 +26,7 @@ export default function LotterEntrance() {
 	const [recentWinner, setRecentWinner] = useState("0")
 	const [fakeAddress1, setFakeAddress1] = useState("0")
 	const [fakeAddress2, setFakeAddress2] = useState("0")
+	const [loadingEnter, setLoadingEnter] = useState(false)
 	const dispatch = useNotification()
 
 	const { runContractFunction: enterRaffle } = useWeb3Contract({
@@ -76,6 +77,7 @@ export default function LotterEntrance() {
 		await tx.wait(1)
 		handleNewNotification(tx)
 		updateUI()
+		setLoadingEnter(false)
 	}
 
 	const handleNewNotification = function () {
@@ -157,11 +159,13 @@ export default function LotterEntrance() {
 						</Text>
 						<Button
 							onClick={async () => {
+								setLoadingEnter(true)
 								await enterRaffle({
 									onSuccess: handleSuccess,
 									onError: (error) => console.log(error),
 								})
 							}}
+							loading={loadingEnter}
 						>
 							Enter Raffle
 						</Button>

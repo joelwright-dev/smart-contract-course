@@ -4,6 +4,8 @@ const nextConfig = {
 	env: {
 		ALCHEMY_API_KEY: process.env.ALCHEMY_API_KEY,
 	},
+
+	images: { loader: "custom" },
 }
 
 module.exports = nextConfig
